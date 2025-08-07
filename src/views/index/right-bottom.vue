@@ -59,17 +59,10 @@ onMounted(() => {
 
 <template>
   <div class="right_bottom_wrap beautify-scroll-def" :class="{ 'overflow-y-auto': !indexConfig.rightBottomSwiper }">
-    <component
-      :is="comName"
-      :list="state.list"
-      v-model="state.scroll"
-      :singleHeight="state.defaultOption.singleHeight"
-      :step="state.defaultOption.step"
-      :limitScrollNum="state.defaultOption.limitScrollNum"
-      :hover="state.defaultOption.hover"
-      :singleWaitTime="state.defaultOption.singleWaitTime"
-      :wheel="state.defaultOption.wheel"
-    >
+    <component :is="comName" :list="state.list" v-model="state.scroll" :singleHeight="state.defaultOption.singleHeight"
+      :step="state.defaultOption.step" :limitScrollNum="state.defaultOption.limitScrollNum"
+      :hover="state.defaultOption.hover" :singleWaitTime="state.defaultOption.singleWaitTime"
+      :wheel="state.defaultOption.wheel">
       <ul class="right_bottom">
         <li class="right_center_item" v-for="(item, i) in state.list" :key="i">
           <span class="orderNum">{{ i + 1 }}</span>
@@ -94,8 +87,7 @@ onMounted(() => {
               <div class="info">
                 <span class="labels shrink-0"> 地址：</span>
                 <span class="ciyao truncate" style="font-size: 12px; width: 220px" :title="handleAddress(item)">
-                  {{ handleAddress(item) }}</span
-                >
+                  {{ handleAddress(item) }}</span>
               </div>
               <div class="info time shrink-0">
                 <span class="labels">时间：</span>
@@ -106,8 +98,7 @@ onMounted(() => {
               <div class="info">
                 <span class="labels">报警内容：</span>
                 <span class="text-content ciyao" :class="{ warning: item.alertdetail }">
-                  {{ item.alertdetail || "无" }}</span
-                >
+                  {{ item.alertdetail || "无" }}</span>
               </div>
             </div>
           </div>

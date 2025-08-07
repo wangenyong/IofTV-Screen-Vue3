@@ -45,7 +45,8 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
       preprocessorOptions: {
         scss: {
           // charset: false,
-          additionalData: `@use "./src/assets/css/variable.scss" as *;`,
+          api: 'modern-compiler', // 解决sass legacy JS API弃用警告
+          additionalData: `@use "@/assets/css/variable.scss" as *;`, // 修改为使用@别名路径
         },
       },
     },

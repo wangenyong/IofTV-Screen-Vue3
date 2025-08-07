@@ -20,7 +20,7 @@ const state = reactive<any>({
 });
 
 const getData = () => {
-  leftBottom( { limitNum: 20 })
+  leftBottom({ limitNum: 20 })
     .then((res) => {
       console.log("左下--设备提醒", res);
       if (res.success) {
@@ -60,17 +60,10 @@ onMounted(() => {
 
 <template>
   <div class="left_boottom_wrap beautify-scroll-def" :class="{ 'overflow-y-auto': !indexConfig.leftBottomSwiper }">
-    <component
-      :is="comName"
-      :list="state.list"
-      v-model="state.scroll"
-      :singleHeight="state.defaultOption.singleHeight"
-      :step="state.defaultOption.step"
-      :limitScrollNum="state.defaultOption.limitScrollNum"
-      :hover="state.defaultOption.hover"
-      :singleWaitTime="state.defaultOption.singleWaitTime"
-      :wheel="state.defaultOption.wheel"
-    >
+    <component :is="comName" :list="state.list" v-model="state.scroll" :singleHeight="state.defaultOption.singleHeight"
+      :step="state.defaultOption.step" :limitScrollNum="state.defaultOption.limitScrollNum"
+      :hover="state.defaultOption.hover" :singleWaitTime="state.defaultOption.singleWaitTime"
+      :wheel="state.defaultOption.wheel">
       <ul class="left_boottom">
         <li class="left_boottom_item" v-for="(item, i) in state.list" :key="i">
           <span class="orderNum doudong">{{ i + 1 }}</span>
@@ -87,14 +80,10 @@ onMounted(() => {
               </div>
             </div>
 
-            <span
-              class="types doudong"
-              :class="{
-                typeRed: item.onlineState == 0,
-                typeGreen: item.onlineState == 1,
-              }"
-              >{{ item.onlineState == 1 ? "上线" : "下线" }}</span
-            >
+            <span class="types doudong" :class="{
+              typeRed: item.onlineState == 0,
+              typeGreen: item.onlineState == 1,
+            }">{{ item.onlineState == 1 ? "上线" : "下线" }}</span>
 
             <div class="info addresswrap">
               <span class="labels">地址：</span>
@@ -134,6 +123,7 @@ onMounted(() => {
     padding: 8px;
     font-size: 14px;
     margin: 10px 0;
+
     .orderNum {
       margin: 0 16px 0 -20px;
     }
@@ -175,6 +165,7 @@ onMounted(() => {
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
+
       .dibu {
         position: absolute;
         height: 2px;
@@ -184,6 +175,7 @@ onMounted(() => {
         left: -2%;
         background-size: cover;
       }
+
       .addresswrap {
         width: 100%;
         display: flex;

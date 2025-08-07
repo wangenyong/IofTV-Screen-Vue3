@@ -1,18 +1,18 @@
 <script setup lang="ts">
 import { reactive } from "vue";
 import dayjs from 'dayjs';
-import type {DateDataType} from "./index.d"
-import {useSettingStore} from "@/stores/index"
+import type { DateDataType } from "./index.d"
+import { useSettingStore } from "@/stores/index"
 
 const dateData = reactive<DateDataType>({
   dateDay: "",
   dateYear: "",
   dateWeek: "",
-  timing:null
+  timing: null
 });
 
-const { setSettingShow} =useSettingStore()
-const weekday= ["周日", "周一", "周二", "周三", "周四", "周五", "周六"]
+const { setSettingShow } = useSettingStore()
+const weekday = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"]
 const timeFn = () => {
   dateData.timing = setInterval(() => {
     dateData.dateDay = dayjs().format("YYYY-MM-DD hh : mm : ss");
@@ -35,8 +35,8 @@ timeFn()
     <div class="timers">
       {{ dateData.dateYear }} {{ dateData.dateWeek }} {{ dateData.dateDay }}
 
-      <div class="setting_icon"   @click="setSettingShow(true)">
-          <img src="@/assets/img/headers/setting.png" alt="设置">
+      <div class="setting_icon" @click="setSettingShow(true)">
+        <img src="@/assets/img/headers/setting.png" alt="设置">
       </div>
     </div>
   </div>
@@ -91,13 +91,15 @@ timeFn()
       height: 20px;
       cursor: pointer;
       margin-left: 12px;
-      img{
+
+      img {
         width: 100%;
         height: 100%;
       }
     }
   }
 }
+
 .title {
   position: relative;
   // width: 500px;
@@ -112,12 +114,10 @@ timeFn()
     font-weight: 900;
     letter-spacing: 6px;
     width: 100%;
-    background: linear-gradient(
-      92deg,
-      #0072ff 0%,
-      #00eaff 48.8525390625%,
-      #01aaff 100%
-    );
+    background: linear-gradient(92deg,
+        #0072ff 0%,
+        #00eaff 48.8525390625%,
+        #01aaff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }

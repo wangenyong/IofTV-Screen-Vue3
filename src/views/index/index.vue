@@ -23,11 +23,7 @@ import RightBottom from "./right-bottom.vue";
       <ItemWrap class="contetn_left-center contetn_lr-item" title="用户总览">
         <LeftCenter />
       </ItemWrap>
-      <ItemWrap
-        class="contetn_left-bottom contetn_lr-item"
-        title="设备提醒"
-        style="padding: 0 10px 16px 10px"
-      >
+      <ItemWrap class="contetn_left-bottom contetn_lr-item" title="设备提醒" style="padding: 0 10px 16px 10px">
         <LeftBottom />
       </ItemWrap>
     </div>
@@ -41,11 +37,7 @@ import RightBottom from "./right-bottom.vue";
       <ItemWrap class="contetn_left-bottom contetn_lr-item" title="报警次数">
         <RightTop />
       </ItemWrap>
-      <ItemWrap
-        class="contetn_left-bottom contetn_lr-item"
-        title="报警排名(TOP8)"
-        style="padding: 0 10px 16px 10px"
-      >
+      <ItemWrap class="contetn_left-bottom contetn_lr-item" title="报警排名(TOP8)" style="padding: 0 10px 16px 10px">
         <RightCenter />
       </ItemWrap>
       <ItemWrap class="contetn_left-bottom contetn_lr-item" title="数据统计图 ">
@@ -62,6 +54,7 @@ import RightBottom from "./right-bottom.vue";
   min-height: calc(100% - 64px);
   justify-content: space-between;
 }
+
 //左边 右边 结构一样
 .contetn_left,
 .contetn_right {
@@ -73,12 +66,14 @@ import RightBottom from "./right-bottom.vue";
   box-sizing: border-box;
   flex-shrink: 0;
 }
+
 .contetn_center {
   flex: 1;
   margin: 0 54px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+
   .contetn_center-bottom {
     height: 315px;
   }
